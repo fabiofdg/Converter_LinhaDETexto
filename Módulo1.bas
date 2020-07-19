@@ -1,4 +1,5 @@
-Attribute VB_Name = "M�dulo1"
+Attribute VB_Name = "Módulo1"
+'Esse primeiro projeto tem a disponibilidade de retirar o espaço desnecessario e deixar o texto mais organizado.
 Sub ConvEspac()
 Application.ScreenUpdating = False
 Do While ActiveCell <> ""
@@ -12,6 +13,7 @@ End If
 Loop
 Application.ScreenUpdating = True
 End Sub
+'Este projeto tem a disponibilidade para converter as linha de número em texto para o formato de de número.
 Sub ConvTXTValor()
 Application.ScreenUpdating = False
 Do While ActiveCell.Offset(0, -(ActiveCell.Column - 1)) <> ""
@@ -25,6 +27,7 @@ End If
 Loop
 Application.ScreenUpdating = True
 End Sub
+'Já esse projeto tem a disponibilidade e converter a celula de data em data no formato original (ex. 01/200 para 01/01/2000).
 Sub ConvData()
 Application.ScreenUpdating = False
 Do While ActiveCell <> ""
@@ -38,24 +41,16 @@ End If
 Loop
 Application.ScreenUpdating = True
 End Sub
+'Já esse último projeto tem a disponibilidade de percorrer todas as guia da planilha para utilizar as funcições assima para sua cada particularidade.
 Sub localiza()
 Dim W As Worksheet
 For Each W In ThisWorkbook.Worksheets
-'W.Select
-H = A01.Cells(Rows.Count, 1).End(xlUp).Row + 1
-A01.Cells(H, 1) = W.Range("A2")
-A01.Cells(H, 2) = W.Name
-        A01.Cells(H, 2).Hyperlinks.Add Anchor:=A01.Cells(H, 2), _
-        Address:="", _
-        SubAddress:="'" & W.Name & "'!A2", _
-        TextToDisplay:=A01.Cells(H, 2).Value
-        
-
-'W.Range("a2").Select
-'M�dulo1.ConvEspac
-'W.Range("b2").Select
-'M�dulo1.ConvData
-'W.Range("c2").Select
-'M�dulo1.ConvTXTValor
+W.Select
+W.Range("a2").Select
+Módulo1.ConvEspac
+W.Range("b2").Select
+Módulo1.ConvData
+W.Range("c2").Select
+Módulo1.ConvTXTValor
 Next W
 End Sub
